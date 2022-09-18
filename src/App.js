@@ -1,5 +1,5 @@
 import React from 'react';
-import Expenses from './components/Expenses';
+import Expenses from './components/Expenses/Expenses';
 
 function App() {
   const expenses = [
@@ -30,14 +30,6 @@ function App() {
       <Expenses items={expenses} />
     </div>
   );
-
-  // Alternative under-the-hood to the JSX code using React object imported from 'react'
-  // return React.createElement(
-  //   'div',
-  //   {},
-  //   React.createElement('h2', {}, "Let's get started!"),
-  //   React.createElement(Expenses, { items: expenses })
-  // );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-// import ExpenseItem from './components/ExpenseItem';
+import React from 'react';
 import Expenses from './components/Expenses';
 
 function App() {
@@ -27,10 +27,17 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      {/* <Expenses title={props.title} amount={props.amount} date={props.date} /> */}
       <Expenses items={expenses} />
     </div>
   );
+
+  // Alternative under-the-hood to the JSX code using React object imported from 'react'
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 }
 
 export default App;

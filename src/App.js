@@ -30,14 +30,10 @@ const App = () => {
     console.log(expense);
   };
 
-  const addFilterYearHandler = (pickedYear) => {
-    console.log(pickedYear);
-  };
-
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} onAddFilterYear={addFilterYearHandler} />
+      <Expenses items={expenses} />
     </div>
   );
 };

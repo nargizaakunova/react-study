@@ -26,6 +26,7 @@ const DUMMY_EXPENSES = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
+  const [filteredExpenses, setFilteredExpenses] = useState(expenses);
   const addExpenseHandler = (expense) => {
     console.log('In App.js');
     setExpenses((prevExpenses) => {
@@ -33,10 +34,16 @@ const App = () => {
     });
   };
 
+  const dateSelectedHandler = (selectedYear) => {
+    setFilteredExpenses([
+      ...expenses.filter((item) => item.date.getFullYear() === +selectedYear),
+    ]);
+  };
+
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+      <Expenses items={filteredExpenses} dateSelected={dateSelectedHandler} />
     </div>
   );
 };
